@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютеры</title>
+</head>
+<body>
+    <div class="container">
+        <button id="shopNow" class="btn btn-primary btn-lg" onclick="startShopping()">Əsas sahifə</button>
+        <button id="openModal" class="btn btn-success btn-lg" onclick="stopShopping()">Yeni komputer</button>
+        <br>
+        <div class="div100"> 
+              <span id="closeModal" class="close">&times;</span>
+            <p class="show">Show</p>
+            <select id="languageSwitcher">
+               <option value="number">5</option>
+                 <option value="number">6</option>
+                 <option value="number">7</option>
+                 <option value="number">8</option>
+                 <option value="number">9</option>
+                 <option value="number">10</option>
+             </select>
+             <p class="enter">entrise</p>
+        </div>
+
+        <div class="div200">
+            <p>Search:</p> <input type="text">
+        </div>
+
+        <table id="computers-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad</th>
+                    <th>Şəkil</th>
+                    <th>Qiymət</th>
+                    <th>Əmaliyyatlar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Регистрация нового компьютера</h2>
+        <form action="#" method="POST">
+            <label for="brand">Марка:</label>
+            <input type="text" id="brand" name="brand" placeholder="Введите марку" required>
+            <br>
+            <label for="model">Модель:</label>
+            <input type="text" id="model" name="model" placeholder="Введите модель" required>
+            <br>
+            <label for="price">Цена:</label>
+            <input type="number" id="price" name="price" placeholder="Введите цену" required>
+            <br>
+            <label for="image">Картинка (URL):</label>
+            <input type="url" id="image" name="image" placeholder="Введите ссылку на изображение" required>
+            <br>
+            <label for="memory">Объём памяти (ГБ):</label>
+            <input type="number" id="memory" name="memory" placeholder="Введите объём памяти" required>
+            <br>
+            <label for="os">Операционная система:</label>
+            <select id="os" name="os" required>
+                <option value="Windows">Windows</option>
+                <option value="MacOS">MacOS</option>
+                <option value="Linux">Linux</option>
+                <option value="Other">Другое</option>
+            </select>
+            <br>
+            <label for="gpu">Объём видеокарты (ГБ):</label>
+            <input type="number" id="gpu" name="gpu" placeholder="Введите объём видеокарты" required>
+            
+            <button type="submit">Зарегистрировать</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+      
+      function startShopping(){
+            window.location.href = "index.html";
+        }
+
+       
+    // Получаем модальное окно
+    var modal = document.getElementById("myModal");
+
+    // Получаем кнопку, которая открывает модальное окно
+    var btn = document.getElementById("openModal");
+
+    // Получаем элемент <span>, который закрывает модальное окно
+    var span = document.getElementsByClassName("close")[0];
+
+    // Когда пользователь нажимает на кнопку, открываем модальное окно
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Когда пользователь нажимает на <span> (x), закрываем модальное окно
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Когда пользователь нажимает в любом месте вне модального окна, закрываем его
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+</script>
+    
+    </div>
+</body>
+</html>
